@@ -1,4 +1,5 @@
-import 'package:eraasoft_projects/models/chat_model.dart';
+
+import 'package:eraasoft_projects/assignment2/models/chat_model.dart';
 import 'package:flutter/material.dart';
 
 class ChatStoryItem extends StatelessWidget {

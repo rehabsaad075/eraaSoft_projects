@@ -1,8 +1,9 @@
+import 'package:eraasoft_projects/assignment2/models/chat_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../componets/chat_componets/chat_item.dart';
 import '../../componets/chat_componets/chat_srory_item.dart';
-import '../../models/chat_model.dart';
+
 
 class ChatsScreen extends StatelessWidget {
   const ChatsScreen({Key? key}) : super(key: key);

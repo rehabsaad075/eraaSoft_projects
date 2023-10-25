@@ -1,4 +1,4 @@
-import 'package:eraasoft_projects/models/gridView_model.dart';
+import 'package:eraasoft_projects/assignment2/models/gridView_model.dart';
 import 'package:flutter/material.dart';
 
 class BuildGridViewItem extends StatelessWidget {

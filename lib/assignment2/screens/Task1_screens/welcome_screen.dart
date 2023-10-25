@@ -1,8 +1,10 @@
-import 'package:eraasoft_projects/componets/task1_componets/button_build_item.dart';
-import 'package:eraasoft_projects/screens/Task1_screens/login_screen.dart';
+
+import 'package:eraasoft_projects/assignment2/screens/Task1_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../componets/task1_componets/button_build_item.dart';
 import 'signUp_screen.dart';
+
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

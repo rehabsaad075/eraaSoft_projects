@@ -1,6 +1,7 @@
+import 'package:eraasoft_projects/assignment2/models/chat_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/chat_model.dart';
+
 
 class ChatItem extends StatelessWidget {
   const ChatItem({Key? key, required this.chatModel}) : super(key: key);

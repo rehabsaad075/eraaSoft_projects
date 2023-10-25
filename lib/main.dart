@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'screens/Task3_screens/home_screen.dart';
-import 'screens/chat_screen/chats_screen.dart';
-import 'screens/Task1_screens/login_screen.dart';
-import 'screens/Task1_screens/signUp_screen.dart';
-import 'screens/Task1_screens/welcome_screen.dart';
-
-
+import 'BMI_calculate/view/screens/BMI_home_screen.dart';
+import 'BMI_calculate/view_model/cubit/bmi_cubit/bloc_observer.dart';
+import 'BMI_calculate/view_model/cubit/bmi_cubit/bmi_cubit.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const EraaSoftProject());
 }
 class EraaSoftProject extends StatelessWidget {
@@ -16,9 +14,14 @@ class EraaSoftProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context)=>BMICubit())
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BmiHomeScreen(),
+      ),
     );
   }
 }
