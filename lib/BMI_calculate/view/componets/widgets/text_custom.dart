@@ -5,11 +5,12 @@ class AppText extends StatelessWidget {
   final double ?fontSize;
   final FontWeight ?fontWeight;
   final Color ?color;
+  final TextAlign? textAlign;
   const AppText({Key? key,
     required this.textValue,
     this.fontSize,
     this.fontWeight,
-    this.color,
+    this.color, this.textAlign,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class AppText extends StatelessWidget {
         fontWeight: fontWeight,
         color: color?? AppColors.white
       ),
+      textAlign: textAlign,
     );
   }
 }

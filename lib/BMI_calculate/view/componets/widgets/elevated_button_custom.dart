@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../view_model/utils/colors.dart';
-import 'text_custom.dart';
+
 
 class ElevatedButtonCustom extends StatelessWidget {
   final void Function()? onPressed;
