@@ -1,6 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:eraasoft_projects/BMI_calculate/view/componets/widgets/text_custom.dart';
 import 'package:eraasoft_projects/Quote_app/model/quote_model.dart';
+import 'package:eraasoft_projects/Quote_app/view_model/data/network/dioHelper.dart';
 import 'package:flutter/material.dart';
+
+import '../../view_model/data/network/endPoints.dart';
 
 class QuoteHomeScreen extends StatefulWidget {
   const QuoteHomeScreen({Key? key}) : super(key: key);
@@ -10,7 +14,7 @@ class QuoteHomeScreen extends StatefulWidget {
 }
 
 class _QuoteHomeScreenState extends State<QuoteHomeScreen> {
-  QuoteModel? quote;
+  Quote? quote;
   String? todayQuote;
   @override
   void initState()  {
@@ -21,9 +25,10 @@ class _QuoteHomeScreenState extends State<QuoteHomeScreen> {
     final Response response = await DioHelper.get(
       endPoint: EndPoints.quoteOfTheDay,
     );
-    quote = await QuoteModel.fromJson(response.data);
+    print(response);
+    quote = Quote.fromJson(response.data);
     setState(() {
-      todayQuote = quote?.quote?.body;
+      todayQuote = quote?.body;
     });
   }
   @override
@@ -47,7 +52,7 @@ class _QuoteHomeScreenState extends State<QuoteHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppText(
-                textValue: quote?.quote?.body ??'',
+                textValue: quote?.body ??'',
                 color: Colors.black,
                 fontSize: 20,
                 textAlign: TextAlign.center,

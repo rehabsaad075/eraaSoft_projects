@@ -2,8 +2,8 @@ class QuoteModel{
    String ?qotdDate;
    Quote ?quote;
 
-  QuoteModel({this.qotdDate, this.quote});
-  QuoteModel.fromJson(Map<String,dynamic>json){
+  QuoteModel({ this.qotdDate, this.quote});
+  QuoteModel.fromJson(Map<String,dynamic> json){
     qotdDate=json['qotd_date'];
     quote=Quote.fromJson(json['quote']);
   }
@@ -13,14 +13,15 @@ class Quote{
    int? id;
    bool ?dialogue;
    bool ?private;
-   List<String>?tags;
+   List<int>?tags;
    String ? url;
    int? favoritesCount;
-   int? upvotesCount;
-   int?downvotesCount;
+   int? upVotesCount;
+   int?downVotesCount;
    String ? author;
    String ? authorPermalink;
    String ? body;
+   bool? isFav;
 
   Quote(
       {this.id,
@@ -29,14 +30,18 @@ class Quote{
       this.tags,
       this.url,
       this.favoritesCount,
-      this.upvotesCount,
-      this.downvotesCount,
+      this.upVotesCount,
+      this.downVotesCount,
       this.author,
       this.authorPermalink,
-      this.body
+      this.body,
+        this.isFav
       });
-  Quote.fromJson(Map<String,dynamic>json){
+  Quote.fromJson(Map<String,dynamic> json){
     id=json['id'];
     body=json['body'];
+    author=json['author'];
+    favoritesCount=json['favorites_count'];
+    isFav=false;
 }
 }
